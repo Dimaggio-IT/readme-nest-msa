@@ -17,7 +17,6 @@ async function bootstrap() {
   app.useGlobalInterceptors(new RequestIdInterceptor());
 
   const port = process.env.PORT || 3004;
-  console.log(process.env);
   await app.listen(port);
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`

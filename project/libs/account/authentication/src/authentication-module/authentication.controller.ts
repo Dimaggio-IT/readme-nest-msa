@@ -54,7 +54,6 @@ export class AuthenticationController {
   @Post('login')
   public async login(@Req() { user }: RequestWithUser) {
     const userToken = await this.authService.createUserToken(user);
-    console.log({ user, userToken });
     return fillDto(LoggedUserRdo, { ...user.toPOJO(), ...userToken });
   }
 
